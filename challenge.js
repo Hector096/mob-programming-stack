@@ -1,14 +1,24 @@
 class Stack {
+constructor(){
+  this.size = 0
+  this.stack =[]
+}
+
   push(number) {
-    // your code here
+    this.stack = [...this.stack,number]
+    this.size +=1
   }
   
   pop() {
-    // your code here
+    this.stack.splice(this.size -1 ,1);
+    this.size -= 1;
   }
   
   min() {
-    // your code here
+    let value = this.stack[0];
+    for(let i = 0; i<this.size;i+=1)
+      value = Math.min(value,this.stack[i])
+    return value
   }
 }
 
@@ -32,3 +42,5 @@ console.log(stack.min())
 // => 3
 
 module.exports = Stack
+
+
